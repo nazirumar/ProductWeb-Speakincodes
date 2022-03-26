@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} {% endblock %}
+
+{% block content %} 
+
+{% for product in products %}
+{{product.ProductName}}
+{{product.ProductPrice}}
+<img src="{{ product.ProductImage }}" alt="">
+
+{% endfor  %}
+<h1>Hello</h1>
+
+{% endblock %}
