@@ -4,10 +4,10 @@ from django.db import models
 
 
 class Category(models.Model):
-    Category=models.CharField(max_length=100)
+    CategoryName=models.CharField(max_length=100)
 
     def __str__(self):
-        return self.Category
+        return self.CategoryName
 
 
 class SubCategory(models.Model):
@@ -28,6 +28,15 @@ class Products(models.Model):
     SubSubCategory = models.ForeignKey(SubSubCategory, on_delete=models.CASCADE)
     ProductName= models.CharField(max_length=100)
     ProductPrice= models.DecimalField(max_digits=30, decimal_places=2)
-    ProductImage= models.ImageField(upload_to='product')
     def __str__(self):
         return self.ProductName
+
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(Products, on_delete=models.CASCADE)
+    category= models.ForeignKey(Category, on_delete=models.CASCADE)
+    ProductImage= models.ImageField(upload_to='product')
+
+    def __str__(self):
+        return str(self.product)
+
