@@ -40,5 +40,5 @@ tinycss2==1.1.1
 tqdm==4.63.1
 urllib3==1.26.8
 webencodings==0.5.1
-Werkzeug==2.0.3
+Werkzeug==2.2.3
 xhtml2pdf==0.2.6
